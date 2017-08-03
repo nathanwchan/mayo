@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bsp-R6-2N8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Data Source-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Mayo_ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="msr-mv-p4J">
+                                <rect key="frame" x="-6" y="-8" width="381" height="675"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoD-Fb-pV5" customClass="iCarousel">
+                                <rect key="frame" x="-6" y="442" width="381" height="225"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="7Im-kZ-0t6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NA1-It-sA5"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="msr-mv-p4J" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="2yT-Cx-Axy"/>
+                            <constraint firstItem="msr-mv-p4J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-22" id="H2x-I6-qsS"/>
+                            <constraint firstItem="XoD-Fb-pV5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="378" id="KDU-Ia-u7r"/>
+                            <constraint firstAttribute="trailing" secondItem="msr-mv-p4J" secondAttribute="trailing" id="ZRj-OZ-dFE"/>
+                            <constraint firstItem="msr-mv-p4J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-8" id="Zvx-Lz-3p3"/>
+                            <constraint firstItem="XoD-Fb-pV5" firstAttribute="leading" secondItem="msr-mv-p4J" secondAttribute="leading" id="n3L-jy-COS"/>
+                            <constraint firstItem="XoD-Fb-pV5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="va3-cH-7cr"/>
+                            <constraint firstItem="XoD-Fb-pV5" firstAttribute="trailing" secondItem="msr-mv-p4J" secondAttribute="trailing" id="yjq-oP-Syt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ree-q5-OYT"/>
+                    <connections>
+                        <outlet property="carouselView" destination="XoD-Fb-pV5" id="Q6w-it-bPZ"/>
+                        <outlet property="mapView" destination="msr-mv-p4J" id="M78-TW-ROU"/>
+                        <segue destination="Jg4-hv-oBL" kind="show" identifier="mainToChatVC" id="oYW-4n-a3T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="-65.217391304347828"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="OVi-tm-r9w">
+            <objects>
+                <viewController storyboardIdentifier="chatViewController" id="Jg4-hv-oBL" customClass="ChatViewController" customModule="Mayo_ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QRw-bv-aag"/>
+                        <viewControllerLayoutGuide type="bottom" id="iIs-Tf-flD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HhT-8r-21l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dJ-gx-QHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1638" y="-65"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CNt-vU-Ynl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1KJ-5O-ete" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pe0-WR-d0B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hFg-MW-psp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwr-Hy-Mqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223.19999999999999" y="-65.217391304347828"/>
+        </scene>
+        <!--Onboarding Video View Controller-->
+        <scene sceneID="Vh0-4i-s6C">
+            <objects>
+                <viewController storyboardIdentifier="Onboarding1" id="bsp-R6-2N8" customClass="OnboardingVideoViewController" customModule="Mayo_ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xgo-tI-5a2"/>
+                        <viewControllerLayoutGuide type="bottom" id="vz4-RT-Pdb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Cid-Nz-22C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <connections>
+                        <segue destination="Fy9-fL-xjK" kind="show" identifier="segueToNotificationsOnboarding" animates="NO" id="dkT-rQ-utB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5V-B4-Pdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798" y="656"/>
+        </scene>
+        <!--Onboarding Notifcations View Controller-->
+        <scene sceneID="1nq-Hz-xi7">
+            <objects>
+                <viewController id="Fy9-fL-xjK" customClass="OnboardingNotifcationsViewController" customModule="Mayo_ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ne1-uO-tGe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pjr-CJ-mgA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0XM-F6-l8m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Uu1-4Q-Mvi" kind="show" identifier="segueToLocationsOnboarding" animates="NO" id="wBu-EH-2v9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvf-BB-9cl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2966" y="655"/>
+        </scene>
+        <!--Onboarding Locations View Controller-->
+        <scene sceneID="Vkh-dC-jBw">
+            <objects>
+                <viewController id="Uu1-4Q-Mvi" customClass="OnboardingLocationsViewController" customModule="Mayo_ios_client" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Swy-4n-drP"/>
+                        <viewControllerLayoutGuide type="bottom" id="tbb-eJ-J2t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TL9-T1-5Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaN-qg-Bfy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3830" y="656"/>
+        </scene>
+    </scenes>
+</document>
