@@ -4,18 +4,9 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* We're working on bringing the world closer together in-person with Mayo. 
+* For more info, get in touch with us! hello@heymayo.com
+* Beta
 
 ### Contribution guidelines ###
 
@@ -25,5 +16,4 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Allen Chan — allen@heymayo.com
