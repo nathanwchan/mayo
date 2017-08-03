@@ -6,7 +6,7 @@ This README would normally document whatever steps are necessary to get your app
 
 * We're working on bringing the world closer together in-person with Mayo. 
 * For more info, get in touch with us! hello@heymayo.com
-* Beta
+* Version: Beta
 
 ### Contribution guidelines ###
 
